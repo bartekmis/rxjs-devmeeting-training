@@ -1,0 +1,22 @@
+<h2>Send message</h2>
+
+<form [formGroup]="form" (ngSubmit)="sendMessage()">
+  <div>
+    <label>
+      Sender: 
+      <input 
+        type="text" 
+        formControlName="sender"
+        required>
+    </label>
+  </div>
+
+  <div>
+    <label>
+      Text: 
+      <textarea formControlName="body"></textarea>
+    </label>
+  </div>
+
+  <button type="submit" [disabled]="!form.valid">Send</button>
+</form>
